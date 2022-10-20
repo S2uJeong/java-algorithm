@@ -29,6 +29,11 @@ public class Stack02 {
         return value;
     }
 
+    public boolean isEmpty() {
+       boolean isEmpty = this.top == 0;
+       return isEmpty;
+    }
+
 
 
 
