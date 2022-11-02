@@ -23,8 +23,6 @@ public class RemoveMultipleOf {
             }
         }
         System.out.println(numbers);
-
     }
-
 
 }
