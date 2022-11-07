@@ -10,7 +10,7 @@ public class Solutuon {
             x = x / 10;
         }
         // 나누어 떨어지는 지 확인
-        if ( (x % sumOfDigit) == 0) {
+        if ((x % sumOfDigit) == 0) {
             return true;
         }
         return false;
