@@ -3,6 +3,7 @@ package com.algorithm.hashTable;
 import java.util.HashSet;
 import java.util.Set;
 
+// 해시테이블 : 해시 값이 인덱스가 되도록 원래의 키 값을 저장한 배열
 public class HashTable {
     // 생성자
     private int size = 1000;
@@ -15,7 +16,7 @@ public class HashTable {
     }
 
 
-    // hash 함수
+    // hash법 : 데이터를 저장할 위치 (인덱스)를 간단한 연산으로 구하는 것.
     public int hash(String key) {
         int askiiSum = 0;
         for (int i = 0; i < key.length(); i++) {
@@ -26,7 +27,7 @@ public class HashTable {
 
     public void insert(String key, Integer value) {
         int hashcode = hash(key);
-        this.table[hashcode] = value;  // this.table ??
+        this.table[hashcode] = value;
      }
 
      public int search(String key) {
