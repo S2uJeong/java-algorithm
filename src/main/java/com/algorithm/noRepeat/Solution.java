@@ -7,12 +7,12 @@ public class Solution {
         answerList.add(arr[0]);
 
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] != arr[i-1]) {
+            if (answerList.get(answerList.size() - 1) != arr[i]) {
                 answerList.add(arr[i]);
             }
         }
         int [] answer = new int [answerList.size()];
-        for (int i = 0; i < answer.length; i++) {
+        for (int i = 0; i < answerList.size(); i++) {
             answer[i] = answerList.get(i);
         }
         return answer;

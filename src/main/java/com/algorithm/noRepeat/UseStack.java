@@ -10,7 +10,7 @@ public class UseStack {
         stack.push(arr[0]);
         for (int i = 1; i < arr.length; i++) {
 
-            if (arr[i] != arr[i - 1]) {
+            if (stack.peek() != arr[i]) {
                 stack.push(arr[i]);
             }
         }
