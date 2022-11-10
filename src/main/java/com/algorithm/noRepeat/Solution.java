@@ -1,0 +1,26 @@
+package com.algorithm.noRepeat;
+import java.util.*;
+
+public class Solution {
+    public int[] solution(int []arr) {
+        List<Integer> answerList = new ArrayList<>();
+        answerList.add(arr[0]);
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] != arr[i-1]) {
+                answerList.add(arr[i]);
+            }
+        }
+        int [] answer = new int [answerList.size()];
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = answerList.get(i);
+        }
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        int [] arr = {1,1,3,3,0,1,1};
+        Solution s = new Solution();
+        System.out.println(Arrays.toString(s.solution(arr)));
+    }
+}
