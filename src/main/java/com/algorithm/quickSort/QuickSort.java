@@ -11,6 +11,13 @@ public class QuickSort {
         int pr = right;
         int x = a[(pl+pr)/2];
 
+        // 퀵정렬 분할 과정 출력해보기 (확인용)
+        System.out.printf("a[%d]~a[%d] : { ", left, right);
+        for (int i = left; i < right ; i++) {
+            System.out.printf("%d, ", a[i]);
+        }
+        System.out.printf("%d}\n",a[right]);
+
         do {
             while (a[pl] < x) pl++;
             while (a[pr] > x) pr--;
@@ -20,7 +27,7 @@ public class QuickSort {
 
         if (left < pr) quickSort(a,left,pr);
         if (pl < right) quickSort(a,pl,right);
-        
+
     }
 
 }
