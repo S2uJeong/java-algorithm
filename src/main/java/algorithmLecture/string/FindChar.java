@@ -9,15 +9,11 @@ public class FindChar {
         strInput = strInput.toUpperCase();
         target = Character.toUpperCase(target);
 
-        System.out.println(strInput);
-        System.out.println(target);
-
         for (int i = 0; i < strInput.length(); i++) {
             if (strInput.charAt(i) == target ) {
                 answer++;
             }
         }
-
         return answer;
     }
 
@@ -26,6 +22,6 @@ public class FindChar {
         Scanner sc = new Scanner(System.in);
         String strInput = sc.next();
         char target = sc.next().charAt(0);
-        System.out.println("입력된 문자: " + strInput + "정답은 ?: " + m.solution(strInput,target) );
+        System.out.print( m.solution(strInput,target) );
     }
 }
