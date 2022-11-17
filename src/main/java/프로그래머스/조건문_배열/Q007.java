@@ -6,7 +6,22 @@ import java.util.Arrays;
 
 public class Q007 {
     public int[] solution(int denum1, int num1, int denum2, int num2) {
-        int[] answer = {};
+        // 0. 변수선언
+        int sameNum;
+        int sumDenum;
+        Q007 q = new Q007();
+        // 1. 공통 분모 만들기, 분자도 같이 곱해주기
+        sameNum = num1 * num2;
+        denum1 *= num2;
+        denum2 *= num1;
+        // 2. 분자 더하기
+        sumDenum = denum1 + denum2;
+        // 3. 약분 -최대공약수(유클호제)
+        sameNum = sameNum / q.gcd(sumDenum, sameNum);
+        sumDenum = sumDenum / q.gcd(sumDenum, sameNum);
+        //  4. 분자 분모 각각 변수로 만들고서, 배열에 넣어주기
+        int[] answer = {sumDenum, sameNum};
+
         return answer;
     }
 
@@ -40,5 +55,7 @@ public class Q007 {
         //  4. 분자 분모 각각 변수로 만들고서, 배열에 넣어주기
         int[] answer = {sumSon, sameMom};
         System.out.println(Arrays.toString(answer));
+
+        System.out.println("최종 제출 정답 : " + Arrays.toString(q.solution(9,2,1,3)));
     }
 }
