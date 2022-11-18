@@ -15,3 +15,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/12926
  A(65) a(97)
  Z(90) z(122)
   -> 여기서 오류가 발생하고 있는것 같음.
+
+   테스트 케이스으로 해보기
+   "AaZz", 25
+   "abcdefghijklmnopqrstuvwxyz", 14
