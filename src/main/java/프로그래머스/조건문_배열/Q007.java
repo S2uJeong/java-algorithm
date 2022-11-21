@@ -11,51 +11,61 @@ public class Q007 {
         int sumDenum;
         Q007 q = new Q007();
         // 1. 공통 분모 만들기, 분자도 같이 곱해주기
-        sameNum = num1 * num2;
-        denum1 *= num2;
-        denum2 *= num1;
+        if (num1 == num2 ){
+            sameNum = num1;
+        } else {
+            sameNum = num1 * num2;
+            denum1 *= num2;
+            denum2 *= num1;
+        }
         // 2. 분자 더하기
         sumDenum = denum1 + denum2;
         // 3. 약분 -최대공약수(유클호제)
-        sameNum = sameNum / q.gcd(sumDenum, sameNum);
-        sumDenum = sumDenum / q.gcd(sumDenum, sameNum);
+        int gcdNum = q.gcd(sumDenum, sameNum);
+        sameNum = sameNum / gcdNum;
+        sumDenum = sumDenum / gcdNum;
         //  4. 분자 분모 각각 변수로 만들고서, 배열에 넣어주기
         int[] answer = {sumDenum, sameNum};
 
         return answer;
     }
 
-    /**
-     * 유클리드 호제법 - 최대공약수
-     */
     public int gcd(int x, int y) {
-        if (y==0) { // 나머지가 0 인거임. 8 % 8 = 0 , 최대공약수는 8
+        if (y == 0) { // 나머지가 0 인거임. 8 % 8 = 0 , 최대공약수는 8
             return x;
-        } else return gcd(y, x%y ); // 나머지를 또 나누어서 x == y, 즉 x%y == 0 일때까지.
+        } else return gcd(y, x % y); // 나머지를 또 나누어서 x == y, 즉 x%y == 0 일때까지.
     }
 
     public static void main(String[] args) {
         // 0. 변수 선언
-        int son1 = 4; int mom1 = 5; int son2 = 8; int mom2 = 9;
+        int son1 = 1;
+        int mom1 = 2;
+        int son2 = 1;
+        int mom2 = 2;
         int sameMom;
         int sumSon;
         Q007 q = new Q007();
 
         // 1. 공통 분모(mom*mom) 만들기, 분자도 같이 곱해주기
-        sameMom = mom1 * mom2;
-        son1 = son1 * mom2;
-        son2 = son2 * mom1;
-        System.out.println("1의 분수 = " + son1 + "/" +  sameMom + " 2의 분수 = " +  son2 + "/" + sameMom);
+        if (mom1 == mom2) {
+            sameMom = mom1;
+        } else {
+            sameMom = mom1 * mom2;
+            son1 = son1 * mom2;
+            son2 = son2 * mom1;
+        }
+        System.out.println("1의 분수 = " + son1 + "/" + sameMom + " 2의 분수 = " + son2 + "/" + sameMom);
         // 2. 분자 더하기
         sumSon = son1 + son2;
         System.out.println("sumSon = " + sumSon);
         // 3. 약분 -최대공약수(유클호제)
-        sameMom = sameMom / q.gcd(sumSon, sameMom);
-        sumSon = sumSon / q.gcd(sumSon, sameMom);
+        int gcdNum = q.gcd(sumSon, sameMom);
+        sameMom = sameMom / gcdNum;
+        sumSon = sumSon / gcdNum;
         //  4. 분자 분모 각각 변수로 만들고서, 배열에 넣어주기
         int[] answer = {sumSon, sameMom};
         System.out.println(Arrays.toString(answer));
 
-        System.out.println("최종 제출 정답 : " + Arrays.toString(q.solution(9,2,1,3)));
+        System.out.println("최종 제출 정답 : " + Arrays.toString(q.solution(1, 2, 1, 2)));
     }
 }
