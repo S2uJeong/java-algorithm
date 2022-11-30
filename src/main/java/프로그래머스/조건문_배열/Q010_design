@@ -3,6 +3,28 @@ https://school.programmers.co.kr/learn/courses/30/lessons/120812
  - 입력된 배열의 최빈값을 구하라
  - 최빈값이 여러개면 -1을 반환
 
+# key-value 자료구조 이용
+- 복잡하니까 일단 array로 해보자
  1. key- value 방식으로 해서 최빈값을 구한다. -> HashMap 사용?
  2. if value값을 비교하여 제일 큰 value를 가진 key를 반환
     if 같은 value값을 가진 key가 있으면 -1을 반환
+
+# array 사용
+- 처음에 배열의 크기를 입력될 크기에 맞춰서 선언해줘야 한다.
+- 그래서 이 방법은 배열의 길이가 짧을 때만 사용하는 것이 좋다.
+1. 입력된 배열 안의 요솟값을 비교 하는 기능
+2. 비교하며 같은 값이 나올 때 마다 cnt를 요소값으로 할 배열
+3. cnt 요소값 중 같은 값이 있으면 -1 없으면 max() 이용해서 최빈값 구하기.
+
+## 오류났던 부분
+최빈값이 두 개면, -1을 반환하는 부분을 넣어줄 때, 위 코드에서 미리 index안의 최고 값에 대해 answer안에 넣어두고,
+
+for (int i = 0; i < index.length; i++) {
+            if (index[answer] == index[i]) {
+                answer = -1;
+            }
+        }
+이라고 코드를 짰다. 그러고선 solution() 함수의 return값을 answer로 내보냈는데, ArrayIndexOutOfBoundsException이 발생했다
+그 이유는 answer 값이 for문이 끝나기 전에 -1이 될 수 있도록 짜놓았기 때문이다.
+배열의 index는 0,자연수만 가능하기에 저 오류가 났다.
+고친 뒤 코드실행을 해보니 실행이 되었고, 완성 코드를 commit했다. - 22.12.01

@@ -10,4 +10,3 @@
 
 ### ToDoList
 - com.algorithm/시저암호 - 에러
-- 프로그래머스/Q010 - 최빈값 진행중

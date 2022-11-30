@@ -1,26 +1,62 @@
 package 프로그래머스.조건문_배열;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 public class Q010 {
     public int solution(int[] array) {
         int answer = 0;
+
+        //  index 배열의 크기를 정하도록 array의 max값을 구한다.
+        int maxOfArray = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > maxOfArray) maxOfArray = array[i];
+        }
+        int[] index = new int[maxOfArray + 1];
+
+        for (int i = 0; i < array.length; i++) {
+            index[array[i]]++;
+        }
+        int max = 0;
+
+        for (int i = 0; i < index.length; i++) {
+            if (index[i] > max) {
+                max = index[i];
+                answer = i;
+            }
+        }
+        int duplicatedCnt = 0;
+
+        for (int i = 0; i < index.length; i++) {
+            if (index[answer] == index[i]) {
+                duplicatedCnt++;
+            }
+        }
+        if (duplicatedCnt > 1) answer = -1;
+
         return answer;
+    }
+
+
+    public int findMaxOfArray(int[] array) {
+        return 0;
     }
 
     public static void main(String[] args) {
         int [] array = {1,2,3,3,3,4};
-        // List<Integer> cnt = new ArrayList<>();
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int [] cnt = new int [array.length];
-        // 1. ( 오름차순으로 정렬된 배열이 들어온다 가정 ) 같은 수 세기
-        for (int i = 1; i <array.length ; i++) {
-            if (array[i] == array[i-1]) {
-               cnt[i-1] ++;
+        int answer = 0; // 최빈값
+        int [] index = new int [101]; // 값 별로 갯수 저장할 배열,
+                                    // input되는 array의 값 범위는 0~100이다.
+        int max = 0;
+        // 1. 값 별로 인덱스 달아서 count 하기
+        for (int i = 0; i < array.length; i++) {
+            index[array[i]] ++;
+        }
+        // 2. index 배열 내에서 최대값 구하기 ==> 최빈값
+        for (int i = 0; i < index.length; i++) {
+            if (index[i] > max) {
+                max = index[i];
+                answer = i;
             }
         }
+
 
     }
 }
