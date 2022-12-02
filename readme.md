@@ -5,8 +5,10 @@
 ## 프로그래머스
 - 1일 1알고리즘 풀기 (22.11.17~ )
 
+## 날코딩
+
 ## algorithmLecture
-- 인프런 강의 보며 공부
+- 강의 보며 공부
 
 ### ToDoList
-- com.algorithm/시저암호 - 에러
+- com.algorithm/시저암호, Weapon, FindParent
