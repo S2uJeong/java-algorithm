@@ -1,4 +1,4 @@
-package algorithmLecture.string.greedy;
+package algorithmLecture.greedy;
 // https://velog.io/@sj9802/%EC%9D%B4.%EC%BD%94.%ED%85%8C-2.-%EA%B7%B8%EB%A6%AC%EB%94%94-%EA%B5%AC%ED%98%84
 
 public class UntilOne {
