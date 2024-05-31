@@ -1,4 +1,4 @@
-package algorithm.boj.num1743;
+package algorithm.boj.bfsdfs.num1743;
 
 import java.io.BufferedReader;
 import java.io.IOException;
