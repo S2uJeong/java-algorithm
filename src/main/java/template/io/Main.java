@@ -20,7 +20,7 @@ public class Main {
 
         logic();
 
-        bw.write("Hello");
+        bw.write("Hello");  // String, char 만 출력가능
         bw.flush();
         bw.close();
         br.close();
