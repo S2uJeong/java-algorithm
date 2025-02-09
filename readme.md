@@ -20,8 +20,12 @@
 ## 알고리즘 note
 ### 입출력
 ```java
+// 입력
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-StringTokenizer st = new StringTokenizer(br.readLine());
+StringTokenizer st = new StringTokenizer(br.readLine()); // br.readLine 할 때마다 새로운 객체 생성 
+
+// 출력
+StringBuilder sb = new StringBuilder();
 ```
 
 ### 자료구조
