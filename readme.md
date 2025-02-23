@@ -16,6 +16,8 @@
   - 자바 개념에 대해 탐구
 
 ---
+## 문제별 개념 
+- boj/bfsdfs/num12919 : `문자열 다루기` Stringbuilder.reverse()
 
 ## 알고리즘 note
 ### 입출력
@@ -58,3 +60,9 @@ StringBuilder sb = new StringBuilder();
 ### 숫자함수
 - max
   - 배열 (Array)에서 가장 큰 값 찾기 : `Arrays.stream(tmpArray).max().getAsInt();`
+
+### 문자열
+- string.equals(string) 으로 비교할 것
+- Stringbuilder.reverse() 를 통해 뒤집기 효율적으로 가능 
+- 특정 index로 탐색 : string.charAt(idx);
+- 처음이나 마지막 글자가 특정 문자와 같다 : string.endsWith(string)
